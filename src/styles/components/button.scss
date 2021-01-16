@@ -1,0 +1,22 @@
+.btn {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+
+    &[disabled] {
+        cursor: default;
+    }
+
+    &-primary {
+        background: $primary;
+        padding: 10px;
+        border-radius: 4px;
+        color: $white;
+
+        &[disabled] {
+            background: rgba($primary, 0.3);
+        }
+    }
+}

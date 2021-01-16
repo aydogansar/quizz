@@ -1,0 +1,14 @@
+.question-container {
+    &__content {
+        min-width: 500px;
+        min-height: 300px;
+        background: $white;
+        border-radius: 8px;
+        border: $border;
+    }
+    &__footer {
+        padding: 15px 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

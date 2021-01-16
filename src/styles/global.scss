@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+body {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    font-family: 'Ubuntu', sans-serif;
+    background: $bg;
+}
+* {
+    box-sizing: border-box;
+}
+.app {
+    width: 100vw;
+    height: 100vh;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
