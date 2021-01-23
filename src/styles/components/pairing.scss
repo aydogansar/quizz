@@ -1,0 +1,69 @@
+.pairing {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__question {
+        background: $light;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+        padding: 15px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        span {
+            padding: 15px;
+            width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        &.not-sortable {
+            span {
+                background: $bg;
+                border: 1px solid $border-color;
+            }
+        }
+
+        &.sortable {
+            span {
+                background: $primary-light;
+                color: $white;
+                border: 1px solid $white;
+
+                &.correct {
+                    background: $success;
+                }
+                &.wrong {
+                    background: $danger;
+                }
+            }
+        }
+    }
+}
+.sorting-element {
+    background: rgba($primary-light, 0.8);
+    color: $white;
+    border: 1px solid $white;
+    cursor: move;
+    padding: 15px;
+    width: 100%;
+}

@@ -32,7 +32,17 @@
                 transition: all 0.3s ease;
             }
             &.active {
-                background: $primar-light;
+                background: $primary-light;
+                color: $white;
+                font-weight: 600;
+            }
+            &.correct {
+                background: $success;
+                color: $white;
+                font-weight: 600;
+            }
+            &.wrong {
+                background: $danger;
                 color: $white;
                 font-weight: 600;
             }

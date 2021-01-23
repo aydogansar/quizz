@@ -1,0 +1,60 @@
+.gap-filling {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+        padding: 15px;
+    }
+
+    &__question {
+        background: $light;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+    li {
+        margin-bottom: 25px;
+    }
+    &__gap {
+        display: inline-flex;
+        position: relative;
+        justify-content: center;
+
+        &--input {
+            border: 0;
+            border-bottom: 1px dashed;
+            outline: 0;
+            margin: 0 10px;
+            text-align: center;
+            width: 150px;
+
+            &:disabled {
+                background: none;
+            }
+
+            &.wrong {
+                text-decoration: line-through;
+                color: $danger;
+            }
+            &.success {
+                color: $success;
+                font-weight: 600;
+            }
+        }
+        &--correct {
+            color: $success;
+            position: absolute;
+            top: -20px;
+            display: none;
+            font-weight: 600;
+
+            &.visible {
+                display: block;
+            }
+        }
+    }
+}

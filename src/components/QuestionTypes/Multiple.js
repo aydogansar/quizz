@@ -3,7 +3,14 @@ import cx from 'classnames'
 
 const initialValue = { index: -1 }
 
-const Multiple = ({ question, choices, setAnswer }) => {
+const Multiple = ({
+    question,
+    choices,
+    setAnswer,
+    isLocked,
+    correct,
+    answer,
+}) => {
     const [selected, setSelected] = useState(initialValue)
 
     const alphabet = (n) => {
@@ -12,8 +19,27 @@ const Multiple = ({ question, choices, setAnswer }) => {
     }
 
     const handleClick = (item) => {
-        setSelected(item)
-        setAnswer(item)
+        if (!isLocked) {
+            setSelected(item)
+            setTimeout(() => {
+                setAnswer(item)
+            }, 700)
+        }
+    }
+
+    const handleCorrect = (item) => {
+        if (answer && correct.toLowerCase() === item.toLowerCase()) {
+            return true
+        } else return false
+    }
+    const handleWrong = (item) => {
+        if (
+            answer &&
+            correct.toLowerCase() !== answer.item.toLowerCase() &&
+            answer.item.toLowerCase() === item.toLowerCase()
+        )
+            return true
+        else return false
     }
 
     return (
@@ -24,9 +50,18 @@ const Multiple = ({ question, choices, setAnswer }) => {
                     return (
                         <div
                             key={i}
-                            className={cx('multiple__choices-item', {
-                                active: selected.index === i,
-                            })}
+                            className={cx(
+                                'multiple__choices-item',
+                                {
+                                    active: selected.index === i,
+                                },
+                                {
+                                    correct: handleCorrect(item),
+                                },
+                                {
+                                    wrong: handleWrong(item),
+                                }
+                            )}
                             onClick={() => handleClick({ item, index: i })}
                         >
                             <span>{alphabet(i)} -) </span>
